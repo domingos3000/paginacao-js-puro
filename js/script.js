@@ -1,21 +1,28 @@
-let list = document.querySelector('.list')
-let numberPage = document.querySelector('.number-page')
-let numberLastPage = document.querySelector('.number-last-page')
-let listItem = document.querySelectorAll('.item')
+let list = document.querySelector('.list') // <= lista de items que serão paginados
+let numberPage = document.querySelector('.number-page') // <= numero da página actual
+let numberLastPage = document.querySelector('.number-last-page') //<= numero da quantidade de páginas 
+let listItem = document.querySelectorAll('.item') // <= lista de itens tratados
 
+
+
+let parPage = 4 // <= quantos items por página?
+
+// função para pegar elementos html
 const html = {
+	
 	get(element){return document.querySelector(element)}
 }
 
-
-let parPage = 4
+// inicialize os valores aqui
 
 const state = {
-	page: 1,
-	totalPage: Math.ceil(listItem.length / parPage),
+	page: 1, // <= página actual
+
+	totalPage: Math.ceil(listItem.length / parPage), // total de páginas
 }
 
 const controls = {
+	// função avançar
 	next() {
 		state.page++
 
@@ -26,6 +33,7 @@ const controls = {
 		render()
 	},
 
+	// função voltar
 	prev() {
 		state.page--
 
@@ -35,6 +43,7 @@ const controls = {
 		render()
 	},
 
+	// função ir para...(primeiro ou ultimo)
 	goTo(page) {
 		if(page == 1){
 			state.page = 1
@@ -44,6 +53,7 @@ const controls = {
 		render()
 	},
 
+	// função de adicionar eventos nos botões
 	createEvent(){
 		html.get('.btn-first').onclick = ()=>{controls.goTo(1)}
 
@@ -55,7 +65,7 @@ const controls = {
 	}
 }
 
-
+// função para recuperar e tratar dos items que serão apresentados
 function listResult(){
 	let listConvert = []
 
@@ -67,6 +77,7 @@ function listResult(){
 	return listConvert;
 }
 
+// função para  apresentar os items tratados na tela
 function render(){
 	let data = listResult()
 
@@ -83,5 +94,12 @@ function render(){
 	numberLastPage.innerHTML=state.totalPage
 }
 
-render()
-controls.createEvent()
+
+// função para inicializar a paginação
+function init(){
+	render()
+	controls.createEvent()
+}
+
+// inicializando a paginação
+init()
