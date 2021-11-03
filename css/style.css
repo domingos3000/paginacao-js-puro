@@ -1,0 +1,72 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'arial';
+	font-size: 12pt;
+}
+
+body {
+	background-color: rgb(23, 26, 29);
+	color: rgb(255, 255, 255);
+	line-height: 20px;
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	display: grid;
+	place-items: center;
+	border-radius: 2.5px;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.container h1{
+	margin: 20px 0;
+	font-size: 15pt;
+}
+
+.container p {
+	margin: 5px 0;
+}
+
+.container .item {
+	border-left: 8px solid rgba(255, 255, 255, 0.5);
+	padding-left: 10px;
+	margin-bottom: 20px;
+}
+
+.container .item footer span{
+	font-size: 11pt;
+	opacity: 0.8;
+}
+
+.container .item footer {
+	margin-bottom: 10px;
+}
+
+.container .controls {
+	display: flex;
+	gap: 10px;
+}
+
+.container > footer {
+	margin-top: 20px;
+	border-top: 1px solid #fff;
+	padding-top: 20px;
+}
+
+.container > footer h4 {
+	margin-bottom: 10px;
+}
+
+.container > footer a {
+	color: #fff;
+}
