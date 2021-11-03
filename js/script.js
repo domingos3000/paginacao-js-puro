@@ -3,7 +3,9 @@ let numberPage = document.querySelector('.number-page') // <= numero da página 
 let numberLastPage = document.querySelector('.number-last-page') //<= numero da quantidade de páginas 
 let listItem = document.querySelectorAll('.item') // <= lista de itens tratados
 
-
+list.onchange = () => {
+	alert(Trocou)
+}
 
 let parPage = 4 // <= quantos items por página?
 
